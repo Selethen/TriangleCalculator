@@ -10,9 +10,12 @@ public class TriangleCalculator {
 		Point b = new Point(0, 2);
 		Point c = new Point(2, 0);
 		
-		Triangle triangle = new Triangle(a, b, c);
-		
-		System.out.println(triangle.getPerimeter());
-		System.out.println(triangle.getArea());
+		try {
+			Triangle triangle = new Triangle(10, 10, 30);
+			System.out.println(triangle.getPerimeter());
+			System.out.println(triangle.getArea());
+		} catch(NotATriangleException ex) {
+			ex.printStackTrace();
+		}
 	}
 }

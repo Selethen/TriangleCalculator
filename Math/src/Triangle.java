@@ -5,10 +5,14 @@ public class Triangle {
 	private double sideB;
 	private double sideC;
 	
-	public Triangle(double sideA, double sideB, double sideC) {
-		this.sideA=sideA;
-		this.sideB=sideB;
-		this.sideC=sideC;
+	public Triangle(double sideA, double sideB, double sideC) throws NotATriangleException{
+		if((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA)) {
+			this.sideA=sideA;
+			this.sideB=sideB;
+			this.sideC=sideC;
+		} else {
+			throw new NotATriangleException("Invalid data (Triangle cannot be created)");
+		}
 	}
 	
 	public Triangle(Point a, Point b, Point c) {
